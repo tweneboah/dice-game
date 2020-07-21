@@ -1,191 +1,4 @@
-// //Selections
-// //Player 1
-// const player1TotalScore = document.querySelector('#player1TotalScore');
-// const player1Btn = document.querySelector('#player1Btn');
-// const player1CurrentScore = document.querySelector('#player1CurrentScore');
-// const player1LifeLeft = document.querySelector('#player1LifeLeft')
-// const player1Bg = document.querySelector('#player1-bg')
-// const player1TossingMsg = document.querySelector('#player1TossingMsg')
-
-
-// const diceImage = document.querySelector('#dice-image')
-// const parentDiv = document.querySelector('#parent');
-// const resetGame = document.querySelector('#resetGame');
-
-// // Player 2
-// const player2TotalScore = document.querySelector('#player2TotalScore');
-// const player2Btn = document.querySelector('#player2Btn');
-// const player2CurrentScore = document.querySelector('#player2CurrentScore');
-// const player2LifeLeft = document.querySelector('#player2LifeLeft')
-// const player2Bg = document.querySelector('#player2-bg');
-// const player2TossingMsg = document.querySelector('#player2TossingMsg')
-// //Player 1 variables
-// let player1CurrentScoreValue = 0
-// let player1TotalScoreValue = 0
-// let player1LifeLeftValue = 6;
-
-
-// //Player 2 variables
-// let player2CurrentScoreValue = 0
-// let player2TotalScoreValue = 0
-// let player2LifeLeftValue = 6;
-
-
-// //intitial values for player 1
-// player1TotalScore.innerHTML = player1TotalScoreValue
-// player1LifeLeft.innerHTML = player1LifeLeftValue;
-
-// //intitial values for player 2
-// player2TotalScore.innerHTML = player2TotalScoreValue
-// player2LifeLeft.innerHTML = player2LifeLeftValue;
-
-
-// //Reset
-// const resetGameFn = () => {
-//     //Player reset
-//     player1CurrentScoreValue = 0
-//     player1TotalScoreValue = 0
-//     player1LifeLeftValue = 6;
-//     player1LifeLeft.innerHTML = player1LifeLeftValue;
-//     player1TotalScore.innerHTML = player1TotalScoreValue;
-//     player1CurrentScore.innerHTML = player1CurrentScoreValue;
-//     //player 2 reset
-//     player2CurrentScoreValue = 0
-//     player2TotalScoreValue = 0
-//     player2LifeLeftValue = 6;
-//     player2LifeLeft.innerHTML = player2LifeLeftValue;
-//     player2CurrentScore.innerHTML = player2CurrentScoreValue;
-//     player2TotalScore.innerHTML = player2TotalScoreValue
-
-//     //display results
-// }
-
-// const player2RollDiceFn = () => {
-//     //rand btn 1-6
-//     const diceRandomNumber = Math.floor(Math.random() * 6) + 1;
-//     //Change the image base on the random
-//     diceImage.src = `./img/dice-${diceRandomNumber}.png` //know the path of your image. you can check the path in your html
-//     //update the score value
-//     player2TotalScoreValue += diceRandomNumber
-//     //reduce the life left by one
-//     player2LifeLeftValue--
-
-//     //check and reset to 6 if the total life left is ===0
-//     if (player2LifeLeftValue === -1) {
-//         player2LifeLeftValue = 6
-//         player2LifeLeft.innerHTML = player2LifeLeftValue;
-//     }
-//     //update the life left
-//     player2LifeLeft.innerHTML = player2LifeLeftValue;
-//     //update the score value
-
-//     //remove class
-//     player2Bg.classList.remove('bg-red-800')
-//     player2Bg.classList.add('bg-transparent-800')
-
-//     player1Bg.classList.remove('bg-transparent-800');
-//     player1Bg.classList.add('bg-red-800');
-
-
-//     player2TotalScore.innerHTML = player2TotalScoreValue;
-//     //update the current value
-//     player2CurrentScore.innerHTML = diceRandomNumber;
-//     //Hide the button 
-//     player1Btn.style.display = 'block';
-//     //hide the tossing msg
-//     //show the other player btn
-//     // player2Btn.style.display = 'none'
-
-
-//     //Reset the game to zero if game is over
-
-//     //Calling the final result fn
-//     //Call this fn after 5 seconds
-
-
-// }
-
-// //Player 1 roll dice fn
-// const player1RollDiceFn = () => {
-//     console.log(player1Bg.classList.contains('bg-red-800'))
-//     //rand btn 1-6
-//     const diceRandomNumber = Math.floor(Math.random() * 6) + 1;
-//     //Change the image base on the random
-//     diceImage.src = `./img/dice-${diceRandomNumber}.png` //know the path of your image. you can check the path in your html
-//     //update the score value
-//     player1TotalScoreValue += diceRandomNumber
-//     //reduce the life left by one
-//     player1LifeLeftValue--
-//     //update the life left
-//     player1LifeLeft.innerHTML = player1LifeLeftValue;
-//     //update the score value
-//     console.log()
-//     //check and reset to 6 if the total life left is ===0
-//     if (player1LifeLeftValue === -1) {
-//         player1LifeLeftValue = 6
-//         player1LifeLeft.innerHTML = player1LifeLeftValue;
-//     }
-//     //remove class
-//     player2Bg.classList.remove('bg-green-800')
-//     player2Bg.classList.add('bg-red-800')
-//     player1Bg.classList.remove('bg-red-800')
-//     player1Bg.classList.add('bg-transparent');
-
-
-//     if (player1LifeLeftValue === 0) {
-//         player1TotalScore.innerHTML = 0;
-//         player1TotalScoreValue = 0
-//         player1LifeLeftValue = 6
-//         player1LifeLeft.innerHTML = player1LifeLeftValue;
-//         diceImage.src = `./img/work.jpg`
-//         const audio = new Audio('./audio/track1.mp3');
-//         audio.play();
-//         parentDiv.classList.add('bg-green-900')
-//     }
-
-
-//     player1TotalScore.innerHTML = player1TotalScoreValue;
-//     //update the current value
-//     player1CurrentScore.innerHTML = diceRandomNumber;
-//     //Hide the button 
-//     player1Btn.style.display = 'none'
-//     //show the other player btn
-//     // player2Btn.style.display = 'block'
-
-//     //Call the player2 fn after 3 seconds
-//     setTimeout(() => {
-//         player2RollDiceFn()
-//     }, 2000);
-
-
-
-
-// }
-
-// //calc final result fn
-// const finalResultsCal = () => {
-//     if (player1TotalScoreValue > player2TotalScoreValue) {
-//         alert('p1 is winner')
-//     } else if (player1TotalScoreValue === player2TotalScoreValue) {
-//         alert('Draw')
-//     } else {
-//         alert('p2 is the winner')
-//     }
-// }
-
-
-
-
-
-// //Trigering the fn
-// player1Btn.addEventListener('click', player1RollDiceFn);
-// // player2Btn.addEventListener('click', player2RollDiceFn)
-// resetGame.addEventListener('click', resetGameFn);
-
-
-
 //UI CONTROLLER
-
 const appUIController = (function () {
     //Select the DOM Strings
     //Player1
@@ -316,7 +129,7 @@ const appController = (function (gameCtrl, UICtrl) {
         diceImage.src = `/src/img/dice-${diceTossedValue2}.png`
         if (data.appData.player2.lifeLeft == 0) {
 
-            player2LifeLeft.innerHTML = 'OVER';
+
             titleDOM.innerHTML = 'Game Over'
             resultMsgDOM.style.display = 'block';
 
@@ -328,21 +141,24 @@ const appController = (function (gameCtrl, UICtrl) {
                 titleDOM.innerHTML = 'Game Over'
                 const audio = new Audio('/src/audio/track1.mp3');
                 parentDivDOM.classList.add('bg-red-900');
+
                 resultMsgDOM.innerHTML = `You won with ${data.appData.player1.totalScore} score`
                 audio.play();
-                diceImage.src = `/src/img/winner.jpg-${diceTossedValue}.png`
+                diceImage.src = `/src/img/winner.jpg`
             } else if (data.appData.player1.totalScore < data.appData.player2.totalScore) {
                 titleDOM.innerHTML = 'Game Over'
                 const audio = new Audio('/src/audio/track1.mp3');
                 audio.play();
                 resultMsgDOM.innerHTML = `Computer won with ${data.appData.player2.totalScore}`
                 parentDivDOM.classList.add('bg-red-900');
+                diceImage.src = `/src/img/winner.jpg`
             } else {
                 const audio = new Audio('/src/audio/track1.mp3');
                 titleDOM.innerHTML = 'Game Over'
                 audio.play();
                 parentDivDOM.classList.add('bg-red-900');
                 resultMsgDOM.innerHTML = `Draw game`
+                diceImage.src = `/src/img/winner.jpg`
             }
         }
     }
@@ -370,7 +186,8 @@ const appController = (function (gameCtrl, UICtrl) {
         //show the play Button 
         player1BtnDOM.style.display = 'block';
         //Remove red bg
-        parentDivDOM.classList.remove('bg-red-900')
+        parentDivDOM.classList.remove('bg-red-900');
+        diceImage.src = `/src/img/dice-4.png`
     }
 
     //Event Listeners
