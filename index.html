@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <title>Dice Game</title>
+</head>
+
+
+<body>
+
+    <!-- Parent -->
+    <div class="bg-gray-700 h-screen flex flex-col  justify-center items-center" id="parent">
+        <!-- Game title -->
+        <p class="text-4xl text-green-500 font-mono shadow-lg" id="title">Dice Game</p>
+        <!-- Alert -->
+        <div class="bg-indigo-900 text-center py-4 text-white text-3xl mb-6 lg:px-4" id="resultMsg">
+            <div class="p-2 bg-indigo-800 items-center text-indigo-100 leading-none lg:rounded-full flex lg:inline-flex"
+                role="alert">
+
+                <span class="font-semibold mr-2 text-left flex-auto">Get the coolest t-shirts from our
+                    brand new
+                    store</span>
+
+            </div>
+        </div>
+        <!-- End of alert -->
+
+        <!-- player 1 -->
+
+        <div class="bg-transparent flex p-3 mx-64 border-2 border-green-600 shadow-2xl rounded-l-lg rounded-r-md">
+            <div class="flex flex-col justify-center items-center">
+                <div class="bg-transparent m-2 p-3 h-64 w-64 text-center flex flex-col justify-center items-center rounded-t-full shadow-2xl border-2 border-gray-500 bg-red-800"
+                    id="player1Container">
+                    <p class="text-3xl text-gray-500" id="player1LifeLeft">Life left : 6 </p>
+                    <p class="text-2xl">You</p>
+                    <P class="text-4xl " id="player1TotalScore">Total : 0 </P>
+                    <P class="text-3xl w-24  bg-red-500 p-1  font-extrabold rounded-md shadow-2xl mb-3"
+                        id="player1CurrentScore">Score
+                    </P>
+                </div>
+                <!--  -->
+
+            </div>
+
+            <!-- Dice image -->
+            <div class="flex flex-col">
+                <!-- Reset Game -->
+                <p class=" border-2 border-red-500 px-5 py-2  rounded-full shadow-2xl cursor-pointer text-gray-400 text-lg text-center"
+                    id=resetGame>
+                    New Game</p>
+
+                <div
+                    class="bg-gray-600 m-2 p-3 h-64 w-64 flex flex-col  justify-center items-center rounded-full shadow-2xl overflow-hidden">
+                    <img src="/src/img/dice-4.png" class="rounded-full w-64 h-64" alt="" id="dice-image">
+                </div>
+                <!-- Roll Dice -->
+                <p class=" hover:cursor-pointer text-center rounded-full border-2 border-yellow-400 px-5 rounded shadow-lg cursor-pointer text-gray-400 text-xl mt-5 hover:bg-red-900"
+                    id="player1Btn">
+                    Roll Dice</p>
+            </div>
+            <!-- Player 2 -->
+            <div class="flex flex-col justify-center items-center">
+                <div class="m-2 p-3 h-64 w-64 text-center flex flex-col justify-center items-center rounded-t-full shadow-lg border-2 "
+                    id="player2Container">
+                    <p class="text-2xl text-gray-300" id="player2LifeLeft">Life left : 6 </p>
+                    <p class="text-2xl text-yellow-500">Computer <span
+                            class="bg-red-900  rounded-full w-24 h-24"></span>
+                    </p>
+                    <P class="text-4xl text-yellow-600" id="player2TotalScore">Total : 0</P>
+                    <P class="text-3xl bg-gray-500 p-3 font-extrabold  rounded-md shadow-2xl mb-3"
+                        id="player2CurrentScore">Score
+                    </P>
+                    <!-- <p class=" border-2 border-green-800 px-5 rounded shadow-lg cursor-pointer text-gray-500 text-lg"
+            id="player2Btn">
+            Roll Dice</p> -->
+                </div>
+            </div>
+            <!-- End of parent -->
+
+        </div>
+        <script src="/src/js/app.js"></script>
+</body>
+
+</html>
